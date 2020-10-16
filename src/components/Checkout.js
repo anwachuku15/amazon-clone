@@ -15,13 +15,15 @@ const Checkout = () => {
 
         <div>
           <h2 className="checkout__title">Your shopping cart</h2>
-          <Subtotal />
-          <CartItem />
+
+          {/* <CartItem /> */}
         </div>
       </div>
 
       <div className="checkout__right">
-        <h2>Subtotal & items</h2>
+        <Subtotal
+        //   cart={cart}
+        />
       </div>
     </div>
   );
