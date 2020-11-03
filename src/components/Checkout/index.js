@@ -1,9 +1,11 @@
 import React from "react";
 import "./Checkout.css";
-import CartItem from "../CartItem";
+// import CartItem from "../CartItem";
 import Subtotal from "../Subtotal";
+import { useStateValue } from "../../context/StateProvider";
 
 const Checkout = () => {
+  const [{ cart }] = useStateValue();
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -21,9 +23,7 @@ const Checkout = () => {
       </div>
 
       <div className="checkout__right">
-        <Subtotal
-        //   cart={cart}
-        />
+        <Subtotal cart={cart} />
       </div>
     </div>
   );
