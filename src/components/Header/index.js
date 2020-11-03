@@ -23,10 +23,12 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        <div className="header__navOption">
-          <span className="header__optionLine1">Hello Guest</span>
-          <span className="header__optionLine2">Sign In</span>
-        </div>
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <div className="header__navOption">
+            <span className="header__optionLine1">Hello Guest</span>
+            <span className="header__optionLine2">Sign In</span>
+          </div>
+        </Link>
         <div className="header__navOption">
           <span className="header__optionLine1">Returns</span>
           <span className="header__optionLine2">& Orders</span>
