@@ -32,6 +32,7 @@ const Product = ({ id, title, image, price, rating }) => {
             .fill()
             .map((_, i) => (
               <span
+                key={i}
                 className="product__ratingStar"
                 role="img"
                 aria-label="star"
