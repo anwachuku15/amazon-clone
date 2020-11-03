@@ -6,6 +6,7 @@ const CartItem = ({ id, image, title, price, rating }) => {
   const [{ cart }, dispatch] = useStateValue();
 
   const removeFromCart = () => {
+    console.log(cart);
     dispatch({
       type: "REMOVE_FROM_CART",
       id: id,
