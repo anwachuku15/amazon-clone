@@ -8,7 +8,7 @@ const Header = () => {
     <div className="header">
       <Link to="/">
         <img
-          src={require("../assets/img/amazon.png")}
+          src={require("../../assets/img/amazon.png")}
           alt=""
           className="header__logo"
         />

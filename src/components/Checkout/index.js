@@ -1,14 +1,14 @@
 import React from "react";
 import "./Checkout.css";
-import CartItem from "./CartItem";
-import Subtotal from "./Subtotal";
+import CartItem from "../CartItem";
+import Subtotal from "../Subtotal";
 
 const Checkout = () => {
   return (
     <div className="checkout">
       <div className="checkout__left">
         <img
-          src={require("../assets/img/ad.jpg")}
+          src={require("../../assets/img/ad.jpg")}
           alt=""
           className="checkout__ad"
         />
