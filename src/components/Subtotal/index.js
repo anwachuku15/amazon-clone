@@ -1,17 +1,11 @@
 import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "../../context/StateProvider";
+import { getCartTotal } from "../../context/reducer";
 
-const Subtotal = ({ cart }) => {
-  const getCartTotal = (cart) => {
-    let total = 0;
-    cart.forEach((item) => {
-      total += item.price;
-    });
-
-    return total;
-  };
-
+const Subtotal = () => {
+  const [{ cart }] = useStateValue();
   return (
     <div className="subtotal">
       <CurrencyFormat
