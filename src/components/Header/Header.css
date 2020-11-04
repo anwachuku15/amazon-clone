@@ -63,12 +63,12 @@
   color: white;
 }
 
-.cartItems {
+.header__cartItems {
   margin-left: 5px;
   color: #cd9042;
   font-weight: 700;
 }
 
-.cartLink {
+.header__cartLink {
   color: white !important;
 }
