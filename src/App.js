@@ -10,6 +10,12 @@ import Checkout from "./components/Checkout";
 import Payment from "./components/Payment";
 import { auth } from "./firebase";
 import { useStateValue } from "./context/StateProvider";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe(
+  "pk_test_51HGmcnIK6mpZFziTPg7ZjTQV8yGVy3JoPW3UQ3QwhZuOQZ5HrkEVarVx5bvY6bbHbzGSDTOMKjxyI3HCpgzCxIHJ00Aip357F5"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
