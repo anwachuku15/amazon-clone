@@ -51,10 +51,10 @@ const Header = () => {
           <span className="header__optionLine2">Prime</span>
         </div>
         <div className="header__cart">
-          <Link to="/checkout" className="cartLink">
+          <Link to="/checkout" className="header__cartLink">
             <ShoppingCartOutlined />
           </Link>
-          <p className="cartItems">{cart?.length}</p>
+          <p className="header__cartItems">{cart?.length}</p>
         </div>
       </div>
     </div>
