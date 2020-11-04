@@ -37,6 +37,13 @@ const Payment = () => {
     getClientSecret();
   }, [cart]);
 
+  const removeFromCart = (id) => {
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      id: id,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
@@ -109,6 +116,7 @@ const Payment = () => {
                 image={item.image}
                 price={item.price}
                 rating={item.rating}
+                removeFromCart={() => removeFromCart(item.id)}
               />
             ))}
           </div>
@@ -136,7 +144,11 @@ const Payment = () => {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabled={processing || disabled || succeeded}>
+                <button
+                  disabled={
+                    processing || disabled || succeeded || cart.length === 0
+                  }
+                >
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
