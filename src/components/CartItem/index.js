@@ -9,6 +9,7 @@ const CartItem = ({
   price,
   rating,
   removeFromCart,
+  hideButton,
 }) => {
   return (
     <div className="cartItem">
@@ -33,7 +34,9 @@ const CartItem = ({
               </span>
             ))}
         </div>
-        <button onClick={removeFromCart}>Remove from Cart</button>
+        {!hideButton && (
+          <button onClick={removeFromCart}>Remove from Cart</button>
+        )}
       </div>
     </div>
   );
