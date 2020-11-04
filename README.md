@@ -1,6 +1,6 @@
-# Amazon Clone (Full Stack)
+# Amazon Clone (Fully functional e-commerce app)
 
-### Stack
+### Full Stack
 
 - React (with Context API for Data Management)
 - Express.js
