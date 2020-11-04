@@ -1,13 +1,20 @@
-import React from "react";
+import React, { forwardRef, useEffect, useState, useCallback } from "react";
 import "./Checkout.css";
 import CartItem from "../CartItem";
 import Subtotal from "../Subtotal";
 import { useStateValue } from "../../context/StateProvider";
 
 const Checkout = () => {
-  const [{ user, cart }] = useStateValue();
+  const [{ user, cart }, dispatch] = useStateValue();
 
   const emailName = user && user.email.split("@");
+
+  const removeFromCart = (id) => {
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      id: id,
+    });
+  };
 
   return (
     <div className="checkout">
@@ -24,11 +31,13 @@ const Checkout = () => {
           {cart.map((item, index) => (
             <CartItem
               key={index}
+              index={index}
               id={item.id}
               title={item.title}
               image={item.image}
               price={item.price}
               rating={item.rating}
+              removeFromCart={() => removeFromCart(item.id)}
             />
           ))}
         </div>
