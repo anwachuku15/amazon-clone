@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 src/firebase.js
 src/components/Checkout/index1.js
+functions/.runtimeconfig.json
+functions/stripe
