@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../../context/reducer";
 import axios from "../../axios";
+import { db } from "../../firebase";
 
 const Payment = () => {
   const [{ cart, user }, dispatch] = useStateValue();
@@ -39,6 +40,7 @@ const Payment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
+    console.log(user?.uid);
 
     // eslint-disable-next-line no-unused-vars
     const payload = await stripe
@@ -49,6 +51,17 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            cart: cart,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          })
+          .catch((err) => console.log(err.message));
         setSucceeded(true);
         setError(null);
         setProcessing(false);

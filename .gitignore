@@ -26,3 +26,6 @@ src/components/Checkout/index1.js
 functions/.runtimeconfig.json
 functions/stripe
 functions/firebase-debug.log
+firebase.json
+firestore.indexes.json
+firestore.rules
