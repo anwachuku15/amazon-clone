@@ -34,5 +34,33 @@
   flex: 0.8;
 }
 
-.payment__details {
+.payment__details > form {
+  max-width: 400px;
+}
+
+.payment__details > form > div > button {
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  font-weight: bolder;
+  margin-top: 10px;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  background: #f0c14b;
+}
+
+.payment__details > form > div > button:disabled {
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  font-weight: bolder;
+  margin-top: 10px;
+  color: #1010104d;
+  background-color: #f0c14b74;
+  border-color: transparent;
+}
+
+.payment__details > h4 {
+  padding-bottom: 20px;
 }
