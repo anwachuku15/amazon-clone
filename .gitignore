@@ -25,3 +25,4 @@ src/firebase.js
 src/components/Checkout/index1.js
 functions/.runtimeconfig.json
 functions/stripe
+functions/firebase-debug.log
