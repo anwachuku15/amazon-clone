@@ -2,16 +2,16 @@ import React from "react";
 import { useStateValue } from "../../context/StateProvider";
 import "./CartItem.css";
 
-const CartItem = ({ id, image, title, price, rating }) => {
+const CartItem = ({
+  index,
+  id,
+  image,
+  title,
+  price,
+  rating,
+  removeFromCart,
+}) => {
   const [{ cart }, dispatch] = useStateValue();
-
-  const removeFromCart = () => {
-    console.log(cart);
-    dispatch({
-      type: "REMOVE_FROM_CART",
-      id: id,
-    });
-  };
 
   return (
     <div className="cartItem">
