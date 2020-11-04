@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState, useCallback } from "react";
+import React from "react";
 import "./Checkout.css";
 import CartItem from "../CartItem";
 import Subtotal from "../Subtotal";

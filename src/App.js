@@ -20,6 +20,7 @@ const promise = loadStripe(
 );
 
 function App() {
+  // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
         });
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

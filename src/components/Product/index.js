@@ -1,12 +1,12 @@
+/* eslint-disable no-empty-pattern */
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "../../context/StateProvider";
 
 const Product = ({ id, title, image, price, rating }) => {
-  const [state, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
   const addToCart = () => {
-    // console.log(state);
     dispatch({
       type: "ADD_TO_CART",
       item: {

@@ -14,6 +14,7 @@ const Payment = () => {
   const [succeeded, setSucceeded] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
 
   const stripe = useStripe();
@@ -39,6 +40,7 @@ const Payment = () => {
     e.preventDefault();
     setProcessing(true);
 
+    // eslint-disable-next-line no-unused-vars
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {

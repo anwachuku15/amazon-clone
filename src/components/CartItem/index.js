@@ -1,5 +1,4 @@
 import React from "react";
-import { useStateValue } from "../../context/StateProvider";
 import "./CartItem.css";
 
 const CartItem = ({
@@ -11,8 +10,6 @@ const CartItem = ({
   rating,
   removeFromCart,
 }) => {
-  const [{ cart }, dispatch] = useStateValue();
-
   return (
     <div className="cartItem">
       <img src={image} alt="" className="cartItem__image" />
