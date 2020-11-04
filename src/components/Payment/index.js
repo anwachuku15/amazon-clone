@@ -30,6 +30,7 @@ const Payment = () => {
         url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
       setClientSecret(res.data.clientSecret);
+      console.log("CLIENT SECRET: ", res.data.clientSecret);
     };
     getClientSecret();
   }, [cart]);
@@ -49,6 +50,10 @@ const Payment = () => {
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_CART",
+        });
 
         history.replace("/orders");
       });
@@ -81,8 +86,9 @@ const Payment = () => {
             <h3>Review items and delivery</h3>
           </div>
           <div className="payment__items">
-            {cart.map((item) => (
+            {cart.map((item, index) => (
               <CartItem
+                key={index}
                 id={item.id}
                 title={item.title}
                 image={item.image}
