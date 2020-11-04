@@ -6,7 +6,7 @@ const Product = ({ id, title, image, price, rating }) => {
   const [state, dispatch] = useStateValue();
 
   const addToCart = () => {
-    console.log(state);
+    // console.log(state);
     dispatch({
       type: "ADD_TO_CART",
       item: {
