@@ -3,9 +3,18 @@ import "./Header.css";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../context/StateProvider";
+import { auth } from "../../firebase";
 
 const Header = () => {
-  const [{ cart }] = useStateValue();
+  const [{ user, cart }] = useStateValue();
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
+  const emailName = user && user.email.split("@");
 
   return (
     <div className="header">
@@ -23,10 +32,14 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
-        <Link to="/login" style={{ textDecoration: "none" }}>
-          <div className="header__navOption">
-            <span className="header__optionLine1">Hello Guest</span>
-            <span className="header__optionLine2">Sign In</span>
+        <Link to={!user && "/login"} style={{ textDecoration: "none" }}>
+          <div onClick={handleAuth} className="header__navOption">
+            <span className="header__optionLine1">
+              Hello, {user ? `${emailName[0]}` : "Guest"}
+            </span>
+            <span className="header__optionLine2">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
         <div className="header__navOption">
