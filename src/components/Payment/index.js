@@ -9,6 +9,8 @@ import { getCartTotal } from "../../context/reducer";
 import axios from "../../axios";
 import { db } from "../../firebase";
 
+// TODO: INCLUDE ADDRESS & BILLING ADDRESS IN FIREBASE
+
 const Payment = () => {
   const [{ cart, user }, dispatch] = useStateValue();
   const [processing, setProcessing] = useState("");
@@ -99,8 +101,8 @@ const Payment = () => {
           </div>
           <div className="payment__address">
             <p>{user?.email}</p>
-            <p>12538 Westland Ct</p>
-            <p>Fulton, MD</p>
+            <p>1234 Capitol St</p>
+            <p>Washington, DC</p>
           </div>
         </div>
         <div className="payment__section">

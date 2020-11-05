@@ -15,6 +15,8 @@ import { useStateValue } from "./context/StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
+// TODO: INCLUDE ADDRESS & BILLING ADDRESS IN FIREBASE
+
 const promise = loadStripe(
   "pk_test_51HGmcnIK6mpZFziTPg7ZjTQV8yGVy3JoPW3UQ3QwhZuOQZ5HrkEVarVx5bvY6bbHbzGSDTOMKjxyI3HCpgzCxIHJ00Aip357F5"
 );

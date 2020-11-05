@@ -3,6 +3,8 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase";
 
+// TODO: INCLUDE ADDRESS & BILLING ADDRESS IN FIREBASE
+
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
