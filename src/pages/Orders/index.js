@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Orders.css";
-import Order from "../Order";
+import Order from "../../components/Order";
 import { useStateValue } from "../../context/StateProvider";
 import { db } from "../../firebase";
 
