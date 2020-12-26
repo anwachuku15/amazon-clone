@@ -1,10 +1,10 @@
 import React from "react";
-import "./Checkout.css";
-import CartItem from "../CartItem";
-import Subtotal from "../Subtotal";
+import "./Cart.css";
+import CartItem from "../../components/CartItem";
+import Subtotal from "../../components/Subtotal";
 import { useStateValue } from "../../context/StateProvider";
 
-const Checkout = () => {
+const Cart = () => {
   const [{ user, cart }, dispatch] = useStateValue();
 
   const emailName = user && user.email.split("@");
@@ -50,4 +50,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default Cart;
