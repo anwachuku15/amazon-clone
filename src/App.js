@@ -4,11 +4,11 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Login from "./components/Login";
-import Home from "./components/Home";
-import Checkout from "./components/Checkout";
-import Payment from "./components/Payment";
-import Orders from "./components/Orders";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
 
 import { auth } from "./firebase";
 import { useStateValue } from "./context/StateProvider";
@@ -49,9 +49,9 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/checkout">
+          <Route exact path="/cart">
             <Header />
-            <Checkout />
+            <Cart />
           </Route>
           <Route exact path="/payment">
             <Header />
