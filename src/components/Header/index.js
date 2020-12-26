@@ -42,7 +42,10 @@ const Header = () => {
             </span>
           </div>
         </Link>
-        <Link to={user && "/orders"} style={{ textDecoration: "none" }}>
+        <Link
+          to={user ? "/orders" : "/login"}
+          style={{ textDecoration: "none" }}
+        >
           <div className="header__navOption">
             <span className="header__optionLine1">Returns</span>
             <span className="header__optionLine2">& Orders</span>
@@ -53,7 +56,7 @@ const Header = () => {
           <span className="header__optionLine2">Prime</span>
         </div>
         <div className="header__cart">
-          <Link to="/checkout" className="header__cartLink">
+          <Link to="/cart" className="header__cartLink">
             <ShoppingCartOutlined />
           </Link>
           <p className="header__cartItems">{cart?.length}</p>
